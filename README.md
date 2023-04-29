@@ -5,5 +5,5 @@ Dice simulator in python
 pip install tk
 
 Steps to install ::
- 1-- Open prompt on your desktop
+                   1-- Open prompt on your desktop                                                                                                                                                                                              
  2-- pip install tk
