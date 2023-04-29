@@ -48,6 +48,7 @@ def six():
     label.configure(text=(six))
     label.pack()
 def dice2():
+    root.state(newstate='iconic')
     lis = [a, b, c, d, e, f]
 
     turn = int(input("Enter how many times the dice to be rolled: "))
@@ -71,6 +72,7 @@ def dice2():
         print(dice2())
     else:
         print("Have a nice day...")
+        root.state(newstate='normal')
 def dice():
     root2: Tk = Tk()
     root2.geometry("220x190")
