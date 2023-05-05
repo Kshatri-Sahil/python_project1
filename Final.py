@@ -1,6 +1,8 @@
 from tkinter import*
 import random
+import tkinter.messagebox
 from tkinter import Tk
+
 
 root: Tk=Tk()
 root.geometry("400x600")
@@ -68,36 +70,47 @@ def dice2():
     else:
         print("Have a nice day...")
         root.state(newstate='normal')
+
+counter = 0
 def dice():
-    root2: Tk = Tk()
-    root2.geometry("220x190")
-    root2.title("Choice")
-    label = Label(root2, text='', font=("Bauhaus 93", 200), bg='black', padx=200, pady=200)
+    global counter
+    counter += 1
+    if counter == 3:
+        tkinter.messagebox.showinfo("Limit exceeded", "You have used your two chances!")
+        counter=0
+    else:
+        root2: Tk = Tk()
+        root2.geometry("220x190")
+        root2.title("Choice")
+        label = Label(root2, text='', font=("Bauhaus 93", 200), bg='black', padx=200, pady=200)
 
-    button1 = Button(root2, text='\u2680', foreground='black', command=lambda:[one(),root2.destroy()], bg='white', font=("Bauhaus 93", 11))
-    button1.pack()
+        button1 = Button(root2, text='\u2680', foreground='black', command=lambda:[one(),root2.destroy()], bg='white', font=("Bauhaus 93", 11))
+        button1.pack()
 
-    button2 = Button(root2, text='\u2681', foreground='black', command=lambda:[two(),root2.destroy()], bg='white', font=("Bauhaus 93", 11))
-    button2.pack()
+        button2 = Button(root2, text='\u2681', foreground='black', command=lambda:[two(),root2.destroy()], bg='white', font=("Bauhaus 93", 11))
+        button2.pack()
 
-    button3 = Button(root2, text='\u2682', foreground='black', command=lambda:[three(),root2.destroy()], bg='white', font=("Bauhaus 93", 11))
-    button3.pack()
+        button3 = Button(root2, text='\u2682', foreground='black', command=lambda:[three(),root2.destroy()], bg='white', font=("Bauhaus 93", 11))
+        button3.pack()
 
-    button4= Button(root2, text='\u2683', foreground='black', command=lambda:[four(),root2.destroy()], bg='white', font=("Bauhaus 93", 11))
-    button4.pack()
+        button4= Button(root2, text='\u2683', foreground='black', command=lambda:[four(),root2.destroy()], bg='white', font=("Bauhaus 93", 11))
+        button4.pack()
 
-    button5= Button(root2, text='\u2684', foreground='black',command=lambda:[five(),root2.destroy()], bg='white', font=("Bauhaus 93", 11))
-    button5.pack()
+        button5= Button(root2, text='\u2684', foreground='black',command=lambda:[five(),root2.destroy()], bg='white', font=("Bauhaus 93", 11))
+        button5.pack()
 
-    button6= Button(root2, text='\u2685', foreground='black', command=lambda:[six(),root2.destroy()], bg='white', font=("Bauhaus 93", 11))
-    button6.pack()
+        button6= Button(root2, text='\u2685', foreground='black', command=lambda:[six(),root2.destroy()], bg='white', font=("Bauhaus 93", 11))
+        button6.pack()
 
-    root2.mainloop()
+        root2.mainloop()
+
+
 
 button=Button(root,text='Roll Dice', foreground='black',command=roll_dice,bg='skyblue', font=("Bauhaus 93",20))
 button0=Button(root,text='Dice Choice', foreground='white',command=dice,bg='gray', font=("Bauhaus 93",10))
 button00=Button(root,text='Play game', foreground='black',command=dice2,bg='green', font=("Bauhaus 93",10))
 button7 = Button(root, text='Exit', foreground='black', command=root.destroy, bg='red', font=("Bauhaus 93", 11))
+
 
 button.pack(ipadx=400,ipady=10)
 button0.pack(padx=100,pady=0)
