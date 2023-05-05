@@ -8,15 +8,10 @@ root.title("DICE SIMLUTOR")
 label = Label(root,text='',font=("Bauhaus 93",200),bg='white',padx=200,pady=200)
 
 a=''' _______\n|       |\n|   .   |\n|       |\n|_______|'''
-
 b=''' _______\n|   .   |\n|       |\n|   .   |\n|_______|'''
-
 c=''' _______\n|.      |\n|   .   |\n|      .|\n|_______|'''
-
 d=''' _______\n|.     .|\n|       |\n|.     .|\n|_______|'''
-
 e=''' _______\n|.     .|\n|   .   |\n|.     .|\n|_______|'''
-
 f=''' _______\n|.     .|\n|.     .|\n|.     .|\n|_______|'''
 
 def roll_dice():
@@ -24,27 +19,27 @@ def roll_dice():
     label.configure(text=f'{random.choice(dice)}',foreground='orange',bg='black')
     label.pack()
 def one():
-    one = ['\u2680', ]
+    one = ['\u2680']
     label.configure(text=(one))
     label.pack()
 def two():
-    two = ['\u2681', ]
+    two = ['\u2681']
     label.configure(text=(two))
     label.pack()
 def three():
-    three = ['\u2682', ]
+    three = ['\u2682']
     label.configure(text=(three))
     label.pack()
 def four():
-    four = ['\u2683', ]
+    four = ['\u2683']
     label.configure(text=(four))
     label.pack()
 def five():
-    five = ['\u2684', ]
+    five = ['\u2684']
     label.configure(text=(five))
     label.pack()
 def six():
-    six = ['\u2685', ]
+    six = ['\u2685']
     label.configure(text=(six))
     label.pack()
 def dice2():
@@ -79,35 +74,34 @@ def dice():
     root2.title("Choice")
     label = Label(root2, text='', font=("Bauhaus 93", 200), bg='black', padx=200, pady=200)
 
-    button1 = Button(root2, text='\u2680', foreground='black', command=one, bg='white', font=("Bauhaus 93", 11))
+    button1 = Button(root2, text='\u2680', foreground='black', command=lambda:[one(),root2.destroy()], bg='white', font=("Bauhaus 93", 11))
     button1.pack()
 
-    button2 = Button(root2, text='\u2681', foreground='black', command=two, bg='white', font=("Bauhaus 93", 11))
+    button2 = Button(root2, text='\u2681', foreground='black', command=lambda:[two(),root2.destroy()], bg='white', font=("Bauhaus 93", 11))
     button2.pack()
 
-    button3 = Button(root2, text='\u2682', foreground='black', command=three, bg='white', font=("Bauhaus 93", 11))
+    button3 = Button(root2, text='\u2682', foreground='black', command=lambda:[three(),root2.destroy()], bg='white', font=("Bauhaus 93", 11))
     button3.pack()
 
-    button4= Button(root2, text='\u2683', foreground='black', command=four, bg='white', font=("Bauhaus 93", 11))
+    button4= Button(root2, text='\u2683', foreground='black', command=lambda:[four(),root2.destroy()], bg='white', font=("Bauhaus 93", 11))
     button4.pack()
 
-    button5= Button(root2, text='\u2684', foreground='black', command=five, bg='white', font=("Bauhaus 93", 11))
+    button5= Button(root2, text='\u2684', foreground='black',command=lambda:[five(),root2.destroy()], bg='white', font=("Bauhaus 93", 11))
     button5.pack()
 
-    button6= Button(root2, text='\u2685', foreground='black', command=six, bg='white', font=("Bauhaus 93", 11))
+    button6= Button(root2, text='\u2685', foreground='black', command=lambda:[six(),root2.destroy()], bg='white', font=("Bauhaus 93", 11))
     button6.pack()
-
-    button7= Button(root2, text='Exit', foreground='black', command=root2.destroy, bg='white', font=("Bauhaus 93", 11))
-    button7.pack()
 
     root2.mainloop()
 
 button=Button(root,text='Roll Dice', foreground='black',command=roll_dice,bg='skyblue', font=("Bauhaus 93",20))
-button0=Button(root,text='Dice Choice', foreground='white',command=dice,bg='black', font=("Bauhaus 93",10))
-button00=Button(root,text='Play game', foreground='black',command=dice2,bg='gray', font=("Bauhaus 93",10))
+button0=Button(root,text='Dice Choice', foreground='white',command=dice,bg='gray', font=("Bauhaus 93",10))
+button00=Button(root,text='Play game', foreground='black',command=dice2,bg='green', font=("Bauhaus 93",10))
+button7 = Button(root, text='Exit', foreground='black', command=root.destroy, bg='red', font=("Bauhaus 93", 11))
 
 button.pack(ipadx=400,ipady=10)
 button0.pack(padx=100,pady=0)
-button00.pack()
+button00.place(x=0,y=73)
+button7.place(x=365,y=73)
 
 root.mainloop()
