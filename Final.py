@@ -78,6 +78,8 @@ def dice():
     if counter == 3:
         tkinter.messagebox.showinfo("Limit exceeded", "You have used your two chances!")
         counter=0
+        button0.config(state="disabled")
+
     else:
         root2: Tk = Tk()
         root2.geometry("220x190")
@@ -105,12 +107,10 @@ def dice():
         root2.mainloop()
 
 
-
 button=Button(root,text='Roll Dice', foreground='black',command=roll_dice,bg='skyblue', font=("Bauhaus 93",20))
 button0=Button(root,text='Dice Choice', foreground='white',command=dice,bg='gray', font=("Bauhaus 93",10))
 button00=Button(root,text='Play game', foreground='black',command=dice2,bg='green', font=("Bauhaus 93",10))
 button7 = Button(root, text='Exit', foreground='black', command=root.destroy, bg='red', font=("Bauhaus 93", 11))
-
 
 button.pack(ipadx=400,ipady=10)
 button0.pack(padx=100,pady=0)
